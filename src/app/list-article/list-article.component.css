@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  background-color: #ce0033;
+  font-weight: bolder;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-brand {
+  color: white !important;
+}
+.header {
+  background-color: #ce0033;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+.header h1 {
+  font-size: 2.5rem;
+}
+.header p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.header .form-inline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.header .form-inline input {
+  width: 300px;
+  margin-right: 10px;
+}
+.content {
+  padding: 40px 0;
+}
+.card {
+  border: none;
+  margin-bottom: 30px;
+  height: 450px;
+}
+.card img {
+  border-radius: 5px;
+  height: 200px;
+}
+.card-title {
+  font-size: 1.25rem;
+  margin-top: 15px;
+}
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+.card-footer {
+  background-color: white;
+  border-top: none;
+}
+.card-footer .btn {
+  font-size: 0.875rem;
+  padding: 5px 10px;
+}
+.card-body .btn {
+  margin-right: 10px;
+}
+.pagination {
+  justify-content: center;
+}
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+.footer .social-icons a {
+  margin: 0 10px;
+}

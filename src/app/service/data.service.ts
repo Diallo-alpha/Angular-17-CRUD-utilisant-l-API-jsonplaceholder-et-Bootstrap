@@ -19,7 +19,7 @@ export class DataService {
   getArticle(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
-
+ 
   // Méthode pour créer un nouvel article
   createArticle(articleData: { title: string; body: string; userId: number }): Observable<any> {
     return this.http.post(this.apiUrl, articleData);
@@ -35,4 +35,3 @@ export class DataService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
- 

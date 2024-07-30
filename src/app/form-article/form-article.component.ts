@@ -15,7 +15,7 @@ import { DataService } from '../service/data.service';
 export class FormArticleComponent {
   articleForm: FormGroup;
   articleId: number | null = null;
-
+ 
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
@@ -25,7 +25,7 @@ export class FormArticleComponent {
     this.articleForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(5)]],
       body: ['', [Validators.required, Validators.minLength(10)]],
-      userId: [1]  
+      userId: [1]
     });
   }
 
