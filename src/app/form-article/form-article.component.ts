@@ -25,7 +25,7 @@ export class FormArticleComponent {
     this.articleForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(5)]],
       body: ['', [Validators.required, Validators.minLength(10)]],
-      userId: [1]  // User ID statique pour cet exemple
+      userId: [1]  
     });
   }
 

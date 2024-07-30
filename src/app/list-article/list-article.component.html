@@ -3,8 +3,8 @@
     <div class="card-body">
       <h5 class="card-title">{{ article.title }}</h5>
       <p class="card-text">{{ article.body }}</p>
-      <button class="btn btn-primary" [routerLink]="['/article', article.id]">View</button>
-      <button class="btn btn-danger" (click)="deleteArticle(article.id)">Delete</button>
+      <button class="btn btn-primary" [routerLink]="['/article', article.id]">Voir plus</button>
+      <button class="btn btn-danger" (click)="deleteArticle(article.id)">Supprimer</button>
     </div>
   </div>
 </div>
