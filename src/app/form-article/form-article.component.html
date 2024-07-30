@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" class="form-control" />
+      <div *ngIf="articleForm.controls['title'].invalid && articleForm.controls['title'].touched">
+        Title is required and must be at least 5 characters long.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea id="body" formControlName="body" class="form-control"></textarea>
+      <div *ngIf="articleForm.controls['body'].invalid && articleForm.controls['body'].touched">
+        Body is required and must be at least 10 characters long.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="articleForm.invalid">Save</button>
+  </form>
+</div>
