@@ -9,7 +9,8 @@
         <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Produits</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
-      </ul>
+        <li class="nav-item"> <a class="nav-link btn btn-secondary" (click)="openCreateModal()">Créer un article</a> </li>
+        </ul>
     </div>
   </div>
 </nav>
@@ -33,10 +34,13 @@
             <p class="card-text">{{ article.body }}</p>
             <button class="btn btn-primary" [routerLink]="['/article', article.id]">Voir plus</button>
             <button class="btn btn-danger" (click)="deleteArticle(article.id)">Supprimer</button>
+            <button class="btn btn-secondary" (click)="openEditModal(article)">Modifier</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="container">
   </div>
   <nav aria-label="Page précédente et suivante">
     <ul class="pagination">
@@ -52,6 +56,38 @@
     </ul>
   </nav>
 </div>
+
+<!-- Modal pour création et modification d'articles -->
+<div class="modal" id="articleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ currentArticle ? 'Modifier l\'article' : 'Créer un article' }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="articleForm" (ngSubmit)="saveArticle()">
+          <div class="form-group">
+            <label for="title">Titre</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+          </div>
+          <div class="form-group">
+            <label for="body">Contenu</label>
+            <textarea class="form-control" id="body" rows="3" formControlName="body"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">URL de l'image</label>
+            <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+          </div>
+          <button type="submit" class="btn btn-primary">{{ currentArticle ? 'Sauvegarder les modifications' : 'Créer' }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container">
     <p>&copy; 2024 SAMA JOURNAL Tous droits réservés.</p>
