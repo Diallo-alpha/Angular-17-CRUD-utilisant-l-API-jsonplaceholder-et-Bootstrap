@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';// Importation pour les observables
 })
 export class DataService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  private commentsUrl = 'https://jsonplaceholder.typicode.com/comments';
 
   constructor(private http: HttpClient) {} // Injection du HttpClient
 
@@ -19,7 +20,7 @@ export class DataService {
   getArticle(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
- 
+
   // Méthode pour créer un nouvel article
   createArticle(articleData: { title: string; body: string; userId: number }): Observable<any> {
     return this.http.post(this.apiUrl, articleData);
@@ -33,5 +34,8 @@ export class DataService {
   // Méthode pour supprimer un article
   deleteArticle(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  getCommentsForArticle(articleId: number): Observable<any> {
+    return this.http.get(`${this.commentsUrl}?postId=${articleId}`);
   }
 }

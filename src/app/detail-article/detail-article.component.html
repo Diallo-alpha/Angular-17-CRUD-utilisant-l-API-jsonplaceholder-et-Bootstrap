@@ -6,4 +6,17 @@
       <button class="btn btn-primary" [routerLink]="['/edit', article.id]">Modifier</button>
     </div>
   </div>
+
+  <div class="card mt-3" *ngIf="comments.length > 0">
+    <div class="card-header">
+      <h5>Commentaires</h5>
+    </div>
+    <div class="list-group list-group-flush">
+      <div class="list-group-item" *ngFor="let comment of comments">
+        <h6 class="mb-1">{{ comment.name }}</h6>
+        <p class="mb-1">{{ comment.body }}</p>
+        <small class="text-muted">{{ comment.email }}</small>
+      </div>
+    </div>
+  </div>
 </div>

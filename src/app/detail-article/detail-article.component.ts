@@ -12,6 +12,7 @@ import { DataService } from '../service/data.service';
 })
 export class ArticleDetailComponent implements OnInit {
   article: any;
+  comments: any[] = [];
 
   constructor(private route: ActivatedRoute, private dataService: DataService) {}
 
@@ -19,6 +20,9 @@ export class ArticleDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.dataService.getArticle(id).subscribe((data) => {
       this.article = data;
+    });
+    this.dataService.getCommentsForArticle(id).subscribe((commentsData) => {
+      this.comments = commentsData;
     });
   }
 }
