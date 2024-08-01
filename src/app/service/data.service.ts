@@ -26,7 +26,7 @@ export class DataService {
     return this.http.post(this.apiUrl, articleData);
   }
 
-  // Méthode pour mettre à jour un article existant
+  // Méthode pour mettre à jour un article existant 
   updateArticle(id: number, articleData: { title: string; body: string; userId: number }): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, articleData);
   }
